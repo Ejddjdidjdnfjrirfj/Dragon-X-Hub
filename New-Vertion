@@ -1,0 +1,49 @@
+local KeySysUiLib = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Player = game.Players.LocalPlayer
+local CK = CorrectKey
+local InCK = InCorrectKey
+local Source = ScriptSoruceCorrectKey
+local KeySysWindow = KeySysUiLib.CreateLib("KEY SYSTEM", "BloodTheme")
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+Notification.new("info", "Hello, "..Player.Name..".am Key System", "Enter Key to load script.")
+
+_G.Key = "f8f2de487fed4e2e8cbbbd5bed5a5768"
+_G.KeyInput = "string"
+
+function Source()
+    print("Script has been loading...")
+NotificationCorrectKey = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+NotificationCorrectKey.new("success", "Key System", "Key is Correct!")
+wait(2)
+KeySysUiLib:ToggleUI()
+wait(2)
+
+end
+
+function InCK()
+    print("Key Is InCorrect! Please Try Key aging")
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+Notification.new("error", "Key System", "Key Is InCorrect! Please Try Key aging")
+end
+
+local KeyTab = KeySysWindow:NewTab("Key System")
+local SectionKey = KeyTab:NewSection("Enter Key here")
+
+SectionKey:NewTextBox("Enter Key", "TextboxInfo", function(Key)
+  _G.KeyInput = Key
+end)
+
+SectionKey:NewButton("Check Key", "ButtonInfo", function()
+    if _G.KeyInput == _G.Key then
+        Source()
+        else
+            InCK()
+        end
+end)
+
+SectionKey:NewButton("Get Key", "ButtonInfo", function()
+    setclipboard("content://com.paprbit.dcoder.fileprovider/files/temp.html")
+end)
