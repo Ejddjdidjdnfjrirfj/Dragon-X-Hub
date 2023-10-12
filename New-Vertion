@@ -19,7 +19,7 @@ NotificationCorrectKey.new("success", "Key System", "Key is Correct!")
 wait(2)
 KeySysUiLib:ToggleUI()
 wait(2)
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ejddjdidjdnfjrirfj/Dragon-X-Hub-Source/main/New-Vertion/Source"))()
 end
 
 function InCK()
